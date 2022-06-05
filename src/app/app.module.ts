@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { TempletoneComponent } from './templetone/templetone.component';
+import { FilldetailsComponent } from './filldetails/filldetails.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TempletoneComponent } from './templetone/templetone.component';
     HeaderComponent,
     FooterComponent,
     HomepageComponent,
-    TempletoneComponent
+    TempletoneComponent,
+    FilldetailsComponent
   ],
   imports: [
     BrowserModule,
