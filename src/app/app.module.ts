@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { TempletoneComponent } from './templetone/templetone.component';
 import { FilldetailsComponent } from './filldetails/filldetails.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FilldetailsComponent } from './filldetails/filldetails.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

@@ -1,16 +1,35 @@
 <app-header></app-header>
-<section>
-    <div class="container">
-        <div class="row">
-            <div>
-                <label>Templet one</label>
+<section class="container">
+    <div>
+        <h2>
+            Fill Your Details
+        </h2>
+        <form [formGroup]="requiredForm" novalidate class="form-control">
+            <div class="form-group">
+                <label class="center-block">Name:
+                    <input class="form-control" formControlName="name">
+                </label>
             </div>
-            <div>
-                <label>Templet Two</label>
+            <div *ngIf="requiredForm.controls['name'].invalid && requiredForm.controls['name'].touched"
+                class="alert alert-danger">
+                <div *ngIf="requiredForm.controls['name'].errors.required">
+                    Name is required.
+                </div>
             </div>
-            <div>
-                <label>Templet Three</label>
+            <div class="form-group">
+                <label class="">Email:
+                    <input class="form-control" formControlName="email">
+                </label>
             </div>
-        </div>
+            <div *ngIf="requiredForm.controls['email'].invalid && requiredForm.controls['email'].touched"
+                class="alert alert-danger">
+                <div *ngIf="requiredForm.controls['email'].errors.required">
+                    email is required.
+                </div>
+                <div *ngIf="requiredForm.controls['email'].errors.pattern">
+                    Worng Email Address
+                </div>
+            </div>
+        </form>
     </div>
 </section>
