@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import { TempletoneComponent } from './templetone/templetone.component';
-import { FilldetailsComponent } from './filldetails/filldetails.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FilldetailsComponent } from './projectsem2/filldetails/filldetails.component';
+import { FooterComponent } from './projectsem2/footer/footer.component';
+import { HeaderComponent } from './projectsem2/header/header.component';
+import { HomepageComponent } from './projectsem2/homepage/homepage.component';
+import { TempOneComponent } from './projectsem2/templets/temp-one/temp-one.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     HomepageComponent,
-    TempletoneComponent,
-    FilldetailsComponent
+    FilldetailsComponent,
+    TempOneComponent
   ],
   imports: [
     BrowserModule,

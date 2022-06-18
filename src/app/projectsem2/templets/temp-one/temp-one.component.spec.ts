@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TempletoneComponent } from './templetone.component';
+import { TempOneComponent } from './temp-one.component';
 
-describe('TempletoneComponent', () => {
-  let component: TempletoneComponent;
-  let fixture: ComponentFixture<TempletoneComponent>;
+describe('TempOneComponent', () => {
+  let component: TempOneComponent;
+  let fixture: ComponentFixture<TempOneComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TempletoneComponent ]
+      declarations: [ TempOneComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TempletoneComponent);
+    fixture = TestBed.createComponent(TempOneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
