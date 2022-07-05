@@ -27,9 +27,15 @@ export class FilldetailsComponent implements OnInit {
   }
 
   details() {
-    this.data = this.requiredForm.value;
-    this.project_sem2.dataflow(this.data);
-    this.router.navigate(['temp_one']);
+    if (this.requiredForm.valid) {
+      this.data = this.requiredForm.value;
+      this.project_sem2.dataflow(this.data);
+      this.router.navigate(['temp_one']);
+    }
+    else {
+      alert("please fill all the details");
+      return;
+    }
   }
 
   ngOnInit(): void {
