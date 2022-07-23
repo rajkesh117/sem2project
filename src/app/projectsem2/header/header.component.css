@@ -110,6 +110,30 @@ i {
     left: -25px;
 }
 
+.login_icon{
+    background-image: url("/assets/login.png");
+	width: auto;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.icon{
+	width: 4%;
+    height: 10vh;
+    margin-right: 11%;
+}
+.username{
+	float: right;
+    margin-top: -88%;
+    width: auto;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-right: -177%;
+    height: auto;
+}
+
 
 @media(min-width: 992px){
 	.navbar-expand-custom {

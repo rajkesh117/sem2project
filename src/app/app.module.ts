@@ -8,6 +8,10 @@ import { FooterComponent } from './projectsem2/footer/footer.component';
 import { HeaderComponent } from './projectsem2/header/header.component';
 import { HomepageComponent } from './projectsem2/homepage/homepage.component';
 import { TempOneComponent } from './projectsem2/templets/temp-one/temp-one.component';
+import { LandingpageComponent } from './projectsem2/landingpage/landingpage.component';
+import {HttpClientModule} from '@angular/common/http'
+import { AuthService } from './services/auth.service';
+import { loginservice } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -16,14 +20,19 @@ import { TempOneComponent } from './projectsem2/templets/temp-one/temp-one.compo
     FooterComponent,
     HomepageComponent,
     FilldetailsComponent,
-    TempOneComponent
+    TempOneComponent,
+    LandingpageComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    loginservice
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

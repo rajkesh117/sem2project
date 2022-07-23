@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-custom navbar-mainbg fixed-top">
-    <a class="navbar-brand navbar-logo" href="#">Build CV</a>
+    <button class="navbar-brand navbar-logo" (click)="logout()">Build CV</button>
     <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation">
         <i class="fas fa-bars text-white"></i>
@@ -11,23 +11,27 @@
                 <div class="right"></div>
             </div>
             <li class="nav-item">
-                <a class="nav-link" href=""><i class="fas fa-tachometer-alt"></i>Home</a>
+                <a class="nav-link" href="" routerLink="/home"><i class="fas fa-tachometer-alt"></i>Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href=""><i class="far fa-address-book"></i>Templets</a>
+                <a class="nav-link" ><i class="far fa-address-book"></i>Templets</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href=""><i class="far fa-clone"></i>Components</a>
+                <a class="nav-link" ><i class="far fa-clone"></i>Components</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href=""><i class="far fa-calendar-alt"></i>Calendar</a>
+                <a class="nav-link" ><i class="far fa-calendar-alt"></i>Calendar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href=""><i class="far fa-chart-bar"></i>Charts</a>
+                <a class="nav-link" ><i class="far fa-chart-bar"></i>Charts</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="" routerLink="filldetails"><i class="far fa-copy"></i>Create CV</a>
+                <a class="nav-link" href="" routerLink="/filldetails"><i class="far fa-copy"></i>Create CV</a>
             </li>
         </ul>
+    </div>
+    <div class="icon">
+        <div class="login_icon"></div>
+        <label class="username">{{data}}</label>
     </div>
 </nav>
