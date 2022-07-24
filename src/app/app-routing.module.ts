@@ -6,6 +6,7 @@ import { HeaderComponent } from './projectsem2/header/header.component';
 import { HomepageComponent } from './projectsem2/homepage/homepage.component';
 import { LandingpageComponent } from './projectsem2/landingpage/landingpage.component';
 import { TempOneComponent } from './projectsem2/templets/temp-one/temp-one.component';
+import { TempTwoComponent } from './projectsem2/templets/temp-two/temp-two.component';
 import { loginservice } from './services/login.service';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'filldetails', component: FilldetailsComponent ,canActivate:[loginservice]},
   { path: 'temp_one', component: TempOneComponent ,canActivate:[loginservice]},
   { path: 'landingpage', component: LandingpageComponent },
+  { path: 'temp_two', component: TempTwoComponent ,canActivate:[loginservice]},
 ];
 
 @NgModule({

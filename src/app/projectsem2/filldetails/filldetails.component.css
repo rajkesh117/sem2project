@@ -1,8 +1,27 @@
-.container{
-    margin-top:5%;
+.container {
+    margin-top: 5%;
 }
 
-.detail_fill{
-    padding:1%;
+.detail_fill {
+    padding: 1%;
     border: 1px solid black;
+}
+
+
+
+.color_red {
+    color: red;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.collegedata{
+    margin-right: 1%;
+}
+
+.about_work{
+    margin-left: 1%;
+    float: right;
+    margin-right: 10%;
+    width: 50vw;
 }

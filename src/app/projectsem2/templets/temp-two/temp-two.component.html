@@ -1,0 +1,204 @@
+<app-header></app-header>
+<html>
+
+<body>
+
+    <div id="doc2" class="yui-t7">
+        <div id="inner">
+
+            <div id="hd">
+                <div class="yui-gc">
+                    <div class="yui-u first">
+                        <h1>{{formdata.name}}</h1>
+                        <h2 *ngIf="formdata.position_name != null">{{formdata.position_name}}</h2>
+                    </div>
+
+                    <div class="yui-u">
+                        <div class="contact-info">
+                            <!-- <h3><a id="pdf" href="#">Download PDF</a></h3> -->
+                            <h3><a href={{formdata.email}}>{{formdata.email}}</a></h3>
+                            <h3>{{formdata.mobile}}</h3>
+                        </div>
+                        <!--// .contact-info -->
+                    </div>
+                </div>
+                <!--// .yui-gc -->
+            </div>
+            <!--// hd -->
+
+            <div id="bd">
+                <div id="yui-main">
+                    <div class="yui-b">
+
+                        <div class="yui-gf">
+                            <div class="yui-u first">
+                                <h2>Profile</h2>
+                            </div>
+                            <div class="yui-u">
+                                <p class="enlarge">
+                                    {{formdata.about}}
+                                </p>
+                            </div>
+                        </div>
+                        <!--// .yui-gf -->
+
+                        <div class="yui-gf">
+                            <div class="yui-u first">
+                                <h2>Skills</h2>
+                            </div>
+                            <div class="yui-u">
+
+                                <div class="talent">
+                                    <h2>{{formdata.p_skill_no1}}</h2>
+                                    <!-- <p>Assertively exploit wireless initiatives rather than synergistic core
+                                        competencies. </p> -->
+                                </div>
+
+                                <div class="talent">
+                                    <h2>{{formdata.p_skill_no2}}</h2>
+                                    <!-- <p>Credibly streamline mission-critical value with multifunctional functionalities.
+                                    </p> -->
+                                </div>
+
+                                <div class="talent">
+                                    <h2>{{formdata.p_skill_no3}}</h2>
+                                    <!-- <p>Proven ability to lead and manage a wide variety of design and development
+                                        projects in team and independent situations.</p> -->
+                                </div>
+                                <div class="talent">
+                                    <h2>{{formdata.p_skill_no4}}</h2>
+                                    <!-- <p>Proven ability to lead and manage a wide variety of design and development
+                                        projects in team and independent situations.</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--// .yui-gf -->
+
+                        <div class="yui-gf">
+                            <div class="yui-u first">
+                                <h2>Technical</h2>
+                            </div>
+                            <div class="yui-u">
+                                <ul class="talent">
+                                    <li>{{formdata.c_skill_no1}}</li>
+                                    <li>{{formdata.c_skill_no2}}</li>
+                                    <li class="last">{{formdata.c_skill_no3}}</li>
+                                </ul>
+
+                                <ul class="talent">
+                                    <li>{{formdata.c_skill_no4}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--// .yui-gf-->
+
+                        <div class="yui-gf" *ngIf="formdata.position_name !=null">
+                            <div class="yui-u first">
+                                <h2>Experience</h2>
+                            </div>
+                            <!--// .yui-u -->
+                            <div class="yui-u">
+
+                                <div class="job">
+                                    <h2>Company_name</h2>
+                                    <h3>{{formdata.position_name}}</h3>
+                                    <h4>2005-2007</h4>
+                                    <p>{{formdata.position_description}} </p>
+                                </div>
+                                <!-- 
+                                <div class="job">
+                                    <h2>Apple Inc.</h2>
+                                    <h3>Senior Interface Designer</h3>
+                                    <h4>2005-2007</h4>
+                                    <p>Progressively reconceptualize multifunctional "outside the box" thinking through
+                                        inexpensive methods of empowerment. Compellingly morph extensive niche markets
+                                        with mission-critical ideas. Phosfluorescently deliver bricks-and-clicks
+                                        strategic theme areas rather than scalable benefits. </p>
+                                </div> -->
+
+                                <!-- <div class="job">
+                                    <h2>Microsoft</h2>
+                                    <h3>Principal and Creative Lead</h3>
+                                    <h4>2004-2005</h4>
+                                    <p>Intrinsicly transform flexible manufactured products without excellent
+                                        intellectual capital. Energistically evisculate orthogonal architectures through
+                                        covalent action items. Assertively incentivize sticky platforms without
+                                        synergistic materials. </p>
+                                </div> -->
+                                <!-- <div class="job last">
+                                    <h2>International Business Machines (IBM)</h2>
+                                    <h3>Lead Web Designer</h3>
+                                    <h4>2001-2004</h4>
+                                    <p>Globally re-engineer cross-media schemas through viral methods of empowerment.
+                                        Proactively grow long-term high-impact human capital and highly efficient
+                                        innovation. Intrinsicly iterate excellent e-tailers with timely e-markets.</p>
+                                </div> -->
+                            </div>
+                            <!--// .yui-u -->
+                        </div>
+                        <!--// .yui-gf -->
+
+
+                        <div class="yui-gf last">
+                            <div class="yui-u first">
+                                <h2>Graduation</h2>
+                            </div>
+                            <div class="yui-u">
+                                <h2>{{formdata.g_collegename}}</h2>
+                                <h3>{{formdata.g_degreename}} &mdash; <strong>{{formdata.g_sgpa}} SGPA</strong> </h3>
+                            </div>
+                        </div>
+
+                        <div class="yui-gf last" *ngIf="formdata.p_collegename != null">
+                            <div class="yui-u first">
+                                <h2>Post-Graduation</h2>
+                            </div>
+                            <div class="yui-u">
+                                <h2>{{formdata.p_collegename}}</h2>
+                                <h3>{{formdata.p_degreename}} -- &mdash; <strong>{{formdata.p_sgpa}} SGPA</strong> </h3>
+                            </div>
+                        </div>
+
+                        <div class="yui-gf last">
+                            <div class="yui-u first">
+                                <h2>Hobbies</h2>
+                            </div>
+                            <div class="yui-u">
+                                <p>{{formdata.hobbies}}</p>
+                            </div>
+                        </div>
+
+                        <div class="yui-gf last">
+                            <div class="yui-u first">
+                                <h2>Strength</h2>
+                            </div>
+                            <div class="yui-u">
+                                <p>{{formdata.strength}}</p>
+                            </div>
+                        </div>
+                        <!--// .yui-gf -->
+
+
+                    </div>
+                    <!--// .yui-b -->
+                </div>
+                <!--// yui-main -->
+            </div>
+            <!--// bd -->
+
+            <div id="ft">
+                <p>{{formdata.name}} &mdash; <a href={{formdata.email}}>{{formdata.email}}</a> &mdash; {{formdata.mobile}}</p>
+            </div>
+            <!--// footer -->
+
+        </div><!-- // inner -->
+
+
+    </div>
+    <!--// doc -->
+
+
+</body>
+
+</html>
+<app-footer></app-footer>

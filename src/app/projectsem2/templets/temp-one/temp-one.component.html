@@ -145,54 +145,63 @@
             <dl>
                 <dd class="clear"></dd>
 
-                <dt>Education</dt>
+                <dt>Graduation</dt>
                 <dd>
-                    <h2>Withering Madness University - Planet Vhoorl</h2>
-                    <p><strong>Major:</strong> Public Relations<br />
-                        <strong>Minor:</strong> Scale Tending
+                    <h2>{{formdata.g_collegename}}</h2>
+                    <p><strong>Graduation In:</strong>{{formdata.g_degreename}}<br />
+                        <strong>SGPA:</strong> {{formdata.g_sgpa}}
+                    </p>
+                </dd>
+                <dd class="clear"></dd>
+
+                <dt *ngIf="formdata.p_collegename !=null">Post-Graduation</dt>
+                <dd *ngIf="formdata.p_collegename !=null">
+                    <h2>{{formdata.p_collegename}}</h2>
+                    <p><strong>Graduation In:</strong>{{formdata.p_degreename}}<br />
+                        <strong>SGPA:</strong> {{formdata.p_sgpa}}
                     </p>
                 </dd>
 
-                <dd class="clear"></dd>
+                <dd class="clear" *ngIf="formdata.p_collegename !=null"></dd>
 
                 <dt>Skills</dt>
                 <dd>
-                    <h2>Office skills</h2>
-                    <p>Office and records management, database administration, event organization, customer support,
-                        travel coordination</p>
+                    <h2>Primary skills</h2>
+                    <p>{{formdata.p_skill_no1}},{{formdata.p_skill_no2}},{{formdata.p_skill_no3}},{{formdata.p_skill_no4}}</p>
 
-                    <h2>Computer skills</h2>
-                    <p>Microsoft productivity software (Word, Excel, etc), Adobe Creative Suite, Windows</p>
+                    <h2 *ngIf="formdata.c_skill_no1 != null">Computer skills</h2>
+                    <p *ngIf="formdata.c_skill_no1 != null">{{formdata.c_skill_no1}},{{formdata.c_skill_no2}},{{formdata.c_skill_no3}},{{formdata.c_skill_no4}}</p>
                 </dd>
 
                 <dd class="clear"></dd>
 
-                <dt>Experience</dt>
-                <dd>
-                    <h2>Doomsday Cult <span>Leader/Overlord - Baton Rogue, LA - 1926-2010</span></h2>
+                <dt *ngIf="formdata.position_name != null">Experience</dt>
+                <dd *ngIf="formdata.position_name != null">
+
+                    <h2>{{formdata.position_name}}<span>Leader/Overlord - Baton Rogue, LA - 1926-2010</span></h2>
                     <ul>
-                        <li>Inspired and won highest peasant death competition among servants</li>
-                        <li>Helped coordinate managers to grow cult following</li>
-                        <li>Provided untimely deaths to all who opposed</li>
+                        <li>{{formdata.position_description}}</li>
+                        <!-- <li>Helped coordinate managers to grow cult following</li>
+                        <li>Provided untimely deaths to all who opposed</li> -->
                     </ul>
 
-                    <h2>The Watering Hole <span>Bartender/Server - Milwaukee, WI - 2009</span></h2>
+                    <!-- <h2>The Watering Hole <span>Bartender/Server - Milwaukee, WI - 2009</span></h2>
                     <ul>
                         <li>Worked on grass-roots promotional campaigns</li>
                         <li>Reduced theft and property damage percentages</li>
                         <li>Janitorial work, Laundry</li>
-                    </ul>
+                    </ul> -->
                 </dd>
 
                 <dd class="clear"></dd>
 
                 <dt>Hobbies</dt>
-                <dd>World Domination, Deep Sea Diving, Murder Most Foul</dd>
+                <dd>{{formdata.hobbies}}</dd>
 
                 <dd class="clear"></dd>
 
-                <dt>References</dt>
-                <dd>Available on request</dd>
+                <dt>strength</dt>
+                <dd>{{formdata.strength}}</dd>
 
                 <dd class="clear"></dd>
             </dl>

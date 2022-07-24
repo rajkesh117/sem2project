@@ -12,6 +12,7 @@ import { LandingpageComponent } from './projectsem2/landingpage/landingpage.comp
 import {HttpClientModule} from '@angular/common/http'
 import { AuthService } from './services/auth.service';
 import { loginservice } from './services/login.service';
+import { TempTwoComponent } from './projectsem2/templets/temp-two/temp-two.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { loginservice } from './services/login.service';
     FilldetailsComponent,
     TempOneComponent,
     LandingpageComponent,
+    TempTwoComponent,
   ],
   imports: [
     BrowserModule,

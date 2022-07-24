@@ -4,24 +4,25 @@
         <h2>
             Fill Your Details
         </h2>
+        <h3>All the fields containing <label class="color_red"> *</label> are required fields</h3>
         <form [formGroup]="requiredForm" novalidate>
             <div class="form-group">
-                <label class="center-block">Name:
+                <label class="center-block">Name:<label class="color_red"> *</label>
                     <input class="form-control" formControlName="name" size="40">
                 </label>
             </div>
-            <div *ngIf="requiredForm.controls['name'].invalid && requiredForm.controls['name'].touched"
-                class="alert alert-danger">
+            <!-- <div *ngIf="requiredForm.controls['name'].invalid && requiredForm.controls['name'].touched"
+                class="alert alert-danger">Name is required.
                 <div *ngIf="requiredForm.controls['name'].errors.required">
                     Name is required.
                 </div>
-            </div>
+            </div> -->
             <div class="form-group">
-                <label class="enter-block">Email:
+                <label class="enter-block">Email:<label class="color_red"> *</label>
                     <input class="form-control" formControlName="email" size="40">
                 </label>
             </div>
-            <div *ngIf="requiredForm.controls['email'].invalid && requiredForm.controls['email'].touched"
+            <!-- <div *ngIf="requiredForm.controls['email'].invalid && requiredForm.controls['email'].touched"
                 class="alert alert-danger">
                 <div *ngIf="requiredForm.controls['email'].errors.required">
                     email is required.
@@ -29,19 +30,103 @@
                 <div *ngIf="requiredForm.controls['email'].errors.pattern">
                     Worng Email Address
                 </div>
-            </div>
+            </div> -->
 
             <div class="form-group">
-                <label class="enter-block">Mobile No:
-                    <input class="form-control" formControlName="mobile" type="number" size="40">
+                <label class="enter-block">Mobile No:<label class="color_red"> *</label>
+                    <input class="form-control" formControlName="mobile" type="text" size="40">
                 </label>
             </div>
 
             <div class="form-group">
-                <label class="enter-block">About Your Self:
-                    <textarea class="form-control" formControlName="about" type="text" size="60"></textarea>
+                <label class="enter-block">About Your Self / About your work if you are Experienced:<label class="color_red"> *</label>
+                    <textarea style="width: 80vw;" class="form-control" formControlName="about" type="text" size="60"></textarea>
                 </label>
             </div>
+
+            <div class="form-group" style="margin-bottom:3%; margin-top:1%">
+                <label>Graduation details</label><label class="color_red"> *</label><br>
+                <label class="enter-block collegedata">College Name:
+                    <input class="form-control" formControlName="g_collegename" size="40">
+                </label>
+                <label class="enter-block collegedata">Degree Name:
+                    <input class="form-control" formControlName="g_degreename" size="40">
+                </label>
+                <label class="enter-block collegedata">sgpa / cgpa:
+                    <input class="form-control" formControlName="g_sgpa" size="40">
+                </label>
+            </div>
+
+            <div class="form-group" style="margin-bottom:3%; margin-top:1%">
+                <label>Post Graduation details</label><br>
+                <label class="enter-block collegedata">College Name:
+                    <input class="form-control" formControlName="p_collegename" size="40">
+                </label>
+                <label class="enter-block collegedata">Degree Name:
+                    <input class="form-control" formControlName="p_degreename" size="40">
+                </label>
+                <label class="enter-block collegedata">sgpa / cgpa:
+                    <input class="form-control" formControlName="p_sgpa" size="40">
+                </label>
+            </div>
+
+            <div class="form-group" style="margin-bottom:3%; margin-top:1%">
+                <label>Primary skills</label><label class="color_red"> *</label><br>
+                <label class="enter-block collegedata">skill 1:
+                    <input class="form-control" formControlName="p_skill_no1" size="40">
+                </label>
+                <label class="enter-block collegedata">skill 2:
+                    <input class="form-control" formControlName="p_skill_no2" size="40">
+                </label>
+                <label class="enter-block collegedata">skill 3:
+                    <input class="form-control" formControlName="p_skill_no3" size="40">
+                </label>
+                <label class="enter-block collegedata">skill 4:
+                    <input class="form-control" formControlName="p_skill_no4" size="40">
+                </label>
+            </div>
+
+            <div class="form-group" style="margin-bottom:3%; margin-top:1%">
+                <label>Computer or Programming skills</label><label class="color_red"> *</label><br>
+                <label class="enter-block collegedata">skill 1:
+                    <input class="form-control" formControlName="c_skill_no1" size="40">
+                </label>
+                <label class="enter-block collegedata">skill 2:
+                    <input class="form-control" formControlName="c_skill_no2" size="40">
+                </label>
+                <label class="enter-block collegedata">skill 3:
+                    <input class="form-control" formControlName="c_skill_no3" size="40">
+                </label>
+                <label class="enter-block collegedata">skill 4:
+                    <input class="form-control" formControlName="c_skill_no4" size="40">
+                </label>
+            </div>
+
+            <div class="form-group" style="margin-bottom:3%; margin-top:1%">
+                <label>Work Experience</label><br>
+                <label class="center-block">Position Name:
+                    <input class="form-control" formControlName="position_name" size="40">
+                </label>
+                <label class="center-block about_work">About Your work:
+                    <textarea class="form-control" formControlName="position_description" size="60"></textarea>
+                </label>
+            </div>
+
+            <div class="form-group" style="margin-bottom:3%; margin-top:1%">
+                <label>Hobbies:</label><label class="color_red"> *</label><br>
+                <label class="center-block">
+                    <input class="form-control" formControlName="hobbies" size="40">
+                </label>
+            </div>
+
+            <div class="form-group" style="margin-bottom:3%; margin-top:1%">
+                <label>Strength:</label><label class="color_red"> *</label><br>
+                <label class="center-block">
+                    <input class="form-control" formControlName="strength" size="40">
+                </label>
+            </div>
+
+            <!-- form ends  -->
             <button class="form-group" (click)="details()" value="submit">Submit</button>
         </form>
     </div>

@@ -11,34 +11,74 @@ import { Router, RouterModule, Routes } from '@angular/router';
 export class FilldetailsComponent implements OnInit {
   requiredForm: any;
   data: any;
+  data2: any;
 
   constructor(private fb: FormBuilder, private project_sem2: project_sem2, private router: Router) {
     this.myForm();
   }
 
+  ngOnInit(): void {
+    this.data2 = localStorage.getItem('formdetails');
+    this.data2 = JSON.parse(this.data2);
+  }
+
+  get formdata() {
+    return this.data2;
+  }
 
   myForm() {
     this.requiredForm = this.fb.group({
+      //personal details------------
+      userid: [''],
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
       mobile: ['', Validators.required],
       about: ['', Validators.required],
+      //----------------
+      //Educational details for graduation
+      g_collegename: ['', Validators.required],
+      g_degreename: ['', Validators.required],
+      g_sgpa: ['', Validators.required],
+      //----------
+      //Educational details for post-graduation
+      p_collegename: [''],
+      p_degreename: [''],
+      p_sgpa: [''],
+      //--------------------------------------
+      // primary skills
+      p_skill_no1: ['', Validators.required],
+      p_skill_no2: ['', Validators.required],
+      p_skill_no3: ['', Validators.required],
+      p_skill_no4: ['', Validators.required],
+      //------------------------
+      // computer skills
+      c_skill_no1: ['', Validators.required],
+      c_skill_no2: ['', Validators.required],
+      c_skill_no3: ['', Validators.required],
+      c_skill_no4: ['', Validators.required],
+      //-----------------
+      // experience data
+      position_name: [''],
+      position_description: [''],
+      //-----------------
+      hobbies: ['', Validators.required],
+      strength: ['', Validators.required],
     });
   }
 
   details() {
+    this.data = this.requiredForm.value;
     if (this.requiredForm.valid) {
       this.data = this.requiredForm.value;
-      this.project_sem2.dataflow(this.data);
+      // localStorage.setItem("formdetails", this.data);
+      localStorage.setItem('formdetails', JSON.stringify(this.data));
+      // this.project_sem2.dataflow(this.data);
       this.router.navigate(['temp_one']);
     }
     else {
       alert("please fill all the details");
       return;
     }
-  }
-
-  ngOnInit(): void {
   }
 
 }

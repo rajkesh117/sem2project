@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { project_sem2 } from '../../../services/project-sem2.service';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-temp-one',
-  templateUrl: './temp-one.component.html',
-  styleUrls: ['./temp-one.component.css']
+  selector: 'app-temp-two',
+  templateUrl: './temp-two.component.html',
+  styleUrls: ['./temp-two.component.css']
 })
-export class TempOneComponent implements OnInit {
+export class TempTwoComponent implements OnInit {
   data: any;
-  constructor(private project_sem2: project_sem2, private router: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.data=localStorage.getItem('formdetails');
