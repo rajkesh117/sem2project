@@ -44,7 +44,7 @@
 
                         <div class="yui-gf">
                             <div class="yui-u first">
-                                <h2>Skills</h2>
+                                <h2>Primary Skills</h2>
                             </div>
                             <div class="yui-u">
 
@@ -76,7 +76,7 @@
 
                         <div class="yui-gf">
                             <div class="yui-u first">
-                                <h2>Technical</h2>
+                                <h2>Technical Skills</h2>
                             </div>
                             <div class="yui-u">
                                 <ul class="talent">
@@ -92,7 +92,7 @@
                         </div>
                         <!--// .yui-gf-->
 
-                        <div class="yui-gf" *ngIf="formdata.position_name !=null">
+                        <div class="yui-gf" *ngIf="showjob">
                             <div class="yui-u first">
                                 <h2>Experience</h2>
                             </div>
@@ -149,7 +149,7 @@
                             </div>
                         </div>
 
-                        <div class="yui-gf last" *ngIf="formdata.p_collegename != null">
+                        <div class="yui-gf last" *ngIf="showpg">
                             <div class="yui-u first">
                                 <h2>Post-Graduation</h2>
                             </div>
@@ -174,6 +174,14 @@
                             </div>
                             <div class="yui-u">
                                 <p>{{formdata.strength}}</p>
+                            </div>
+                        </div>
+                        <div class="yui-gf last">
+                            <div class="yui-u first">
+                                <h2>Project</h2>
+                            </div>
+                            <div class="yui-u">
+                                <p>CV Builder using Angular and .Net, which creates cv without storing data on server end which is secure for user</p>
                             </div>
                         </div>
                         <!--// .yui-gf -->

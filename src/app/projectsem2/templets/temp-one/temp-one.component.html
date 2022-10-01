@@ -120,7 +120,7 @@
 
         <div id="page-wrap">
 
-            <img src="images/cthulu.png" alt="Photo of Cthulu" id="pic" />
+            <!-- <img src="images/cthulu.png" alt="Photo of Cthulu" id="pic" /> -->
 
             <div id="contact-info" class="vcard">
 
@@ -154,15 +154,15 @@
                 </dd>
                 <dd class="clear"></dd>
 
-                <dt *ngIf="formdata.p_collegename !=null">Post-Graduation</dt>
-                <dd *ngIf="formdata.p_collegename !=null">
+                <dt *ngIf="showpg">Post-Graduation</dt>
+                <dd *ngIf="showpg">
                     <h2>{{formdata.p_collegename}}</h2>
                     <p><strong>Graduation In:</strong>{{formdata.p_degreename}}<br />
                         <strong>SGPA:</strong> {{formdata.p_sgpa}}
                     </p>
                 </dd>
 
-                <dd class="clear" *ngIf="formdata.p_collegename !=null"></dd>
+                <dd class="clear" *ngIf="showpg"></dd>
 
                 <dt>Skills</dt>
                 <dd>
@@ -175,8 +175,8 @@
 
                 <dd class="clear"></dd>
 
-                <dt *ngIf="formdata.position_name != null">Experience</dt>
-                <dd *ngIf="formdata.position_name != null">
+                <dt *ngIf="showjob">Experience</dt>
+                <dd *ngIf="showjob">
 
                     <h2>{{formdata.position_name}}<span>Leader/Overlord - Baton Rogue, LA - 1926-2010</span></h2>
                     <ul>
@@ -202,6 +202,11 @@
 
                 <dt>strength</dt>
                 <dd>{{formdata.strength}}</dd>
+
+                <dd class="clear"></dd>
+
+                <dt>Project</dt>
+                <dd>CV Builder using Angular and .Net, which creates cv without storing data on server end which is secure for user</dd>
 
                 <dd class="clear"></dd>
             </dl>

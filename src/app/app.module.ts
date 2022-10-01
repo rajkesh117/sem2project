@@ -13,6 +13,10 @@ import {HttpClientModule} from '@angular/common/http'
 import { AuthService } from './services/auth.service';
 import { loginservice } from './services/login.service';
 import { TempTwoComponent } from './projectsem2/templets/temp-two/temp-two.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FillDetailsDialogComponent } from './dialogs/fill-details-dialog/fill-details-dialog.component';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -24,17 +28,25 @@ import { TempTwoComponent } from './projectsem2/templets/temp-two/temp-two.compo
     TempOneComponent,
     LandingpageComponent,
     TempTwoComponent,
+    FillDetailsDialogComponent,
+
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatDialogModule
+
+
   ],
   providers: [
     AuthService,
     loginservice
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+    entryComponents: [FillDetailsDialogComponent]
 })
 export class AppModule { }

@@ -1,0 +1,17 @@
+<div style="background: aquamarine;">
+    <div class="text" *ngIf="studentfield">
+        <label>{{data.name}} are you College student?</label>
+        <button class="button-62" (click)="student('yes')">Yes</button>
+        <button class="button-62" (click)="student('no')">No</button>
+    </div>
+    <div *ngIf="doingpg">
+        <label>{{data.name}} are you doing Post Graduation?</label>
+        <button class="button-62" (click)="Doingpg('yes')">Yes</button>
+        <button class="button-62" (click)="Doingpg('no')">No</button>
+    </div>
+    <div *ngIf="doingjob">
+        <label>{{data.name}} are you Doing a Job?</label>
+        <button class="button-62" (click)="Doingjob('yes')">Yes</button>
+        <button class="button-62" (click)="Doingjob('no')">No</button>
+    </div>
+</div>

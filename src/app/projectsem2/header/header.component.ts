@@ -23,6 +23,11 @@ export class HeaderComponent implements OnInit {
       localStorage.removeItem('username');
       localStorage.removeItem('password');
       localStorage.removeItem('formdetails');
+      localStorage.removeItem('filldetails');
+      localStorage.removeItem('student');
+      localStorage.removeItem('PG');
+      localStorage.removeItem('job');
+
       console.log(localStorage.getItem('username'));
       console.log(localStorage.getItem('password'));
       this.router.navigate(['landingpage']);

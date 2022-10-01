@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { project_sem2 } from '../../services/project-sem2.service';
 import { Router, RouterModule, Routes } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { FillDetailsDialogComponent } from 'src/app/dialogs/fill-details-dialog/fill-details-dialog.component';
+
 
 @Component({
   selector: 'app-filldetails',
@@ -12,16 +15,66 @@ export class FilldetailsComponent implements OnInit {
   requiredForm: any;
   data: any;
   data2: any;
+  filldetails: any;
+  PG: any;
+  Job: any;
+  showpg: boolean | undefined;
+  showjob: boolean | undefined;
+  filldata: any;
 
-  constructor(private fb: FormBuilder, private project_sem2: project_sem2, private router: Router) {
+  constructor(private fb: FormBuilder, private project_sem2: project_sem2, private router: Router, public dialog: MatDialog) {
     this.myForm();
   }
 
   ngOnInit(): void {
+    if(localStorage.getItem('formdetails') != null){
+      this.filldata=localStorage.getItem('formdetails');
+      this.filldata=JSON.parse(this.filldata);
+    }
     this.data2 = localStorage.getItem('formdetails');
     this.data2 = JSON.parse(this.data2);
+    if (localStorage.getItem('filldetails') == null) {
+      this.openDialog();
+    }
+    if (localStorage.getItem('filldetails') == 'true') {
+      this.filldetails = true;
+    }
+    this.formdisplay();
   }
 
+  formdisplay() {
+    this.PG = localStorage.getItem('PG');
+    this.PG = JSON.parse(this.PG);
+    this.Job = localStorage.getItem('job');
+    this.Job = JSON.parse(this.Job);
+
+    if (this.PG == "yes") {
+      this.showpg = true;
+    }
+    else{
+      this.showpg = false;
+    }
+    if (this.Job == "yes") {
+      this.showjob = true;
+    }
+    else{
+      this.showjob = false;
+    }
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(FillDetailsDialogComponent, {
+      width: '300px',
+      height: '250px',
+      data: {
+        name: localStorage.getItem('username'),
+      }
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      // Do stuff after the dialog has closed
+      this.filldetails = true;
+      this.formdisplay();
+    });
+  }
   get formdata() {
     return this.data2;
   }
